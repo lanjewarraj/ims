@@ -103,5 +103,19 @@ namespace IMS
             GridView1.DataBind();
 
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JCVIBOG\SQLEXPRESS;Initial Catalog=rl_ims_db;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM rl_vendor_info WHERE id='" + int.Parse(TextBox2.Text) + "'", con);
+            SqlDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                TextBox2.Text = r.GetValue(0).ToString();
+                TextBox1.Text = r.GetValue(1).ToString();
+                
+            }
+        }
     }
 }

@@ -16,6 +16,8 @@
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Item id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                &nbsp;
+                <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Get" Width="65px" />
                 <br />
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Item name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,11 +45,11 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button2" runat="server" Text="Update" />
+                <asp:Button ID="Button2" runat="server" Text="Update" OnClick="Button2_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button3" runat="server" Text="Delete" />
+                <asp:Button ID="Button3" runat="server" Text="Delete" OnClick="Button3_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button4" runat="server" Text="Search" />
+                <asp:Button ID="Button4" runat="server" Text="Search" OnClick="Button4_Click" />
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
