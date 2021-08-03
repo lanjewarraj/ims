@@ -17,19 +17,22 @@ namespace IMS
             {
                 loadRecord();
             }
+            //load vendor name
+            fiil_vendor_name();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JCVIBOG\SQLEXPRESS;Initial Catalog=rl_ims_db;Integrated Security=True");
             con.Open();
-            String query = "INSERT INTO rl_items_info (item_name,category,rate,balance_qty) values('" + TextBox2.Text + "','"+ DropDownList1.Text + "','"+ TextBox3.Text + "','"+ TextBox4.Text+ "')";
+            String query = "INSERT INTO rl_items_info (item_name,category,rate,balance_qty,date) values('" + TextBox2.Text + "','"+ DropDownList1.Text + "','"+ TextBox3.Text + "','"+ TextBox4.Text+ "','"+ TextBox5.Text+ "')";
             TextBox1.Text = "";
             TextBox2.Text = "";
             DropDownList1.Text = "";
             TextBox3.Text = "";
             TextBox4.Text = "";
-            
+            TextBox5.Text = "";
+
             Label1.Text = "Record inserted success";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Data Inserted Successfull');", true);
 
@@ -54,16 +57,34 @@ namespace IMS
             GridView1.DataBind();
         }
 
+        public void fiil_vendor_name()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JCVIBOG\SQLEXPRESS;Initial Catalog=rl_ims_db;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from rl_vendor_info";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach(DataRow dr in dt.Rows)
+            {
+                drpdwn2.Items.Add(dr["vendor_name"].ToString());
+            }
+        }
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JCVIBOG\SQLEXPRESS;Initial Catalog=rl_ims_db;Integrated Security=True");
             con.Open();
-            String query = "UPDATE rl_items_info SET item_name='" + TextBox2.Text + "', category='"+ DropDownList1.Text+ "', rate='"+ TextBox3.Text+ "', balance_qty='"+ TextBox4.Text+ "' WHERE id='" + int.Parse(TextBox1.Text) + "'";
+            String query = "UPDATE rl_items_info SET item_name='" + TextBox2.Text + "', category='"+ DropDownList1.Text+ "', rate='"+ TextBox3.Text+ "', balance_qty='"+ TextBox4.Text+ "' date='"+ TextBox5.Text+ "' WHERE id='" + int.Parse(TextBox1.Text) + "'";
             TextBox1.Text = "";
             TextBox2.Text = "";
             DropDownList1.Text = "";
             TextBox3.Text = "";
             TextBox4.Text = "";
+            TextBox5.Text = "";
             Label1.Text = "Record updated success";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Data Updated Successfully');", true);
 
@@ -86,6 +107,7 @@ namespace IMS
             DropDownList1.Text = "";
             TextBox3.Text = "";
             TextBox4.Text = "";
+            TextBox5.Text = "";
             Label1.Text = "Record deleted success";
             ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Data Deleted Successfully');", true);
 
@@ -121,6 +143,7 @@ namespace IMS
                 DropDownList1.Text = r.GetValue(2).ToString();
                 TextBox3.Text = r.GetValue(3).ToString();
                 TextBox4.Text = r.GetValue(4).ToString();
+                TextBox5.Text = r.GetValue(5).ToString();
             }
         }
     }

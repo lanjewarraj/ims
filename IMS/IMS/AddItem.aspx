@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <a href="Index.aspx">Return back</a>
-            <asp:Panel ID="Panel1" runat="server" BackColor="#999966" Font-Bold="False" Font-Size="14pt" Height="410px">
+            <asp:Panel ID="Panel1" runat="server" BackColor="#999966" Font-Bold="False" Font-Size="14pt" Height="484px">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Items into stock<br />
@@ -43,10 +43,21 @@
                 <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                 <br />
                 <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox5" runat="server" TextMode="Date"></asp:TextBox>
+                <br />
+                &nbsp;&nbsp;&nbsp;
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="drpdwn2" runat="server">
+                </asp:DropDownList>
+                <br />
+                <br />
+                <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button2" runat="server" Text="Update" OnClick="Button2_Click" />
+                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Update" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Button3" runat="server" Text="Delete" OnClick="Button3_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -58,7 +69,6 @@
                 <asp:Label ID="Label1" runat="server" Font-Italic="True" ForeColor="#FFFFCC"></asp:Label>
             </asp:Panel>
         </div>
-        <br />
         <br />
         <asp:GridView ID="GridView1" runat="server" Width="516px">
         </asp:GridView>
